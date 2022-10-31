@@ -651,7 +651,7 @@
 
                 // Close button
                 if (this._opts.showCloseButton && !this._opts.closeButtonMarkup) {
-                    this.trackListener(google.maps.event.addDomListener(this._html.closeButton, 'click', function (e) {
+                    this.trackListener(google.maps.event.addListener(this._html.closeButton, 'click', function (e) {
                         e.cancelBubble = true;
                         if (e.stopPropagation) {
                             e.stopPropagation();
@@ -663,7 +663,7 @@
                 // Stop the mouse event propagation
                 var mouseEvents = ['click', 'dblclick', 'rightclick', 'contextmenu', 'drag', 'dragend', 'dragstart', 'mousedown', 'mouseout', 'mouseover', 'mouseup', 'touchstart', 'touchend', 'touchmove', 'wheel', 'mousewheel', 'DOMMouseScroll', 'MozMousePixelScroll'];
                 mouseEvents.forEach(function (event) {
-                    _this2.trackListener(google.maps.event.addDomListener(_this2._html.wrapper, event, function (e) {
+                    _this2.trackListener(google.maps.event.addListener(_this2._html.wrapper, event, function (e) {
                         e.cancelBubble = true;
                         if (e.stopPropagation) {
                             e.stopPropagation();

@@ -591,7 +591,7 @@ export default class SnazzyInfoWindow extends getGoogleClass() {
 
         // Close button
         if (this._opts.showCloseButton && !this._opts.closeButtonMarkup) {
-            this.trackListener(google.maps.event.addDomListener(this._html.closeButton,
+            this.trackListener(google.maps.event.addListener(this._html.closeButton,
                 'click', (e) => {
                     e.cancelBubble = true;
                     if (e.stopPropagation) {
@@ -608,7 +608,7 @@ export default class SnazzyInfoWindow extends getGoogleClass() {
             'touchstart', 'touchend', 'touchmove',
             'wheel', 'mousewheel', 'DOMMouseScroll', 'MozMousePixelScroll'];
         mouseEvents.forEach((event) => {
-            this.trackListener(google.maps.event.addDomListener(this._html.wrapper,
+            this.trackListener(google.maps.event.addListener(this._html.wrapper,
                 event, (e) => {
                     e.cancelBubble = true;
                     if (e.stopPropagation) {
